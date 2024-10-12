@@ -1,16 +1,15 @@
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer.jsx"
+import Footer from "./Components/Footer";
+import HeroSection from "./Components/Home";
 
 function App() {
-
   return (
     <div className="font-Manrope">
-      <Navbar/>
-      <Footer/>
-    </div >
-    
-
+      <Navbar />
+      <HeroSection />
+      <Footer />
+    </div>
   );
-};
+}
 
 export default App;

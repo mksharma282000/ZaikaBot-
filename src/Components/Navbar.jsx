@@ -25,7 +25,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="bg-gradient-to-tl from-zinc-950 to-zinc-800 text-zinc-200 flex items-center">
+    <nav className="sticky top-0 z-[999] bg-gradient-to-tl from-zinc-950 to-zinc-800 text-zinc-200 flex items-center">
       <div className="container flex justify-between h-20 m-auto md:px-12">
         <div className="flex font-bold text-3xl items-center">
           <h1>LOGO</h1>
