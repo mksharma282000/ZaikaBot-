@@ -1,39 +1,38 @@
 import TeamMember from "./TeamMember";
-import image1 from "../assets/mohitkumar.jpg";
+import image1 from "../assets/20230819_134458_0000.jpg";
 import image2 from "../assets/mohitkumar.jpg";
+import Section from "./Section";
 
 const members = [
-  {
-    name: "Mohit Kumar",
-    designation: "Front-end Developer | UI/UX",
-    description:
-      "Former Frontend development intern at NirmanLabs. Early Frontend Developer at edquest",
-    img: image1,
-  },
   {
     name: "Mohit Saroha",
     designation: "Front-end Developer | UI/UX",
     description:
       "Former Frontend development intern at NirmanLabs. Early Frontend Developer at edquest",
+    img: image1,
+    link: "https://www.linkedin.com/in/mohit-saroha/",
+  },
+  {
+    name: "Mohit Kumar",
+    designation: "Front-end Developer | UI/UX",
+    description:
+      "Former Frontend development intern at NirmanLabs. Early Frontend Developer at edquest",
     img: image2,
+    link: "https://www.linkedin.com/in/mohitkumar282000/",
   },
 ];
 const OurTeam = () => {
   return (
-    <div className="bg-slate-200 px-5 text-gray-700 py-16">
-      <div className="m-auto py-4 w-1/2">
-        <h3 className="hidden md:block font-medium text-5xl text-center leading-tight">
-          We are the people who make up Zestify
-        </h3>
-        <h3 className="md:hidden font-medium text-5xl text-center leading-tight">
-          We are the people who make up Zestify
-        </h3>
-        <p className="my-2 text-center tracking-wide">
-          Our philosophy is simple; hire great people and give them the
-          resources and support to do their best work
-        </p>
-      </div>
-      <div className="flex gap-20 justify-center">
+    <Section>
+      <h5 className="font-medium text-3xl md:text-5xl text-center leading-tight">
+        We are the people who make up Zestify
+      </h5>
+      <p className="my-2 text-center tracking-wide mt-5">
+        Our philosophy is simple; hire great people and give them the resources
+        and support to do their best work
+      </p>
+      <br />
+      <div className="md:flex space-y-8 md:space-y-0 gap-20 justify-center">
         {members &&
           members.map((e) => (
             <TeamMember
@@ -42,10 +41,11 @@ const OurTeam = () => {
               designation={e.designation}
               description={e.description}
               img={e.img}
+              link={e.link}
             />
           ))}
       </div>
-    </div>
+    </Section>
   );
 };
 export default OurTeam;
