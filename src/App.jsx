@@ -8,9 +8,11 @@ import { useContext, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "./AuthProvider";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Wishlist from "./pages/Wishlist"
+import About from "./pages/About";
+import Wishlist from "./pages/Wishlist";
+
+
 
 function App() {
   const [active, setActive] = useState(0);
@@ -49,7 +51,7 @@ function App() {
             element={<About active={active} setActive={setActive} />}
           />
           <Route
-            path="/contact"
+            path="/Contact"
             element={<Contact active={active} setActive={setActive} />}
           />
           <Route
