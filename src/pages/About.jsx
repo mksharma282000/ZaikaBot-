@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
-import backgroundImage from "../assets/002.jpeg";
 
 export default function About({ active, setActive }) {
   useEffect(() => {
@@ -24,10 +23,9 @@ export default function About({ active, setActive }) {
                   <span className="inline-flex w-3 h-3 rounded-full bg-red-600 ml-2"></span>
                 </h1>
                 <p className="text-xl md:mt-8  mt-4 mb-6">
-                  Simply chat with our bot, tell us your cravings, and
-                  we'll handle the rest.
+                  Simply chat with our bot, tell us your cravings, and we'll
+                  handle the rest.
                 </p>
-               
               </div>
             </div>
             <div className="col-span-12 lg:col-span-6">

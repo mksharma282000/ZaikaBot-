@@ -3,20 +3,19 @@ import Home from "./pages/Home";
 import Feedback from "./pages/Feedback";
 import Team from "./pages/Team";
 import Profile from "./pages/Profile";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import AdminDashboard from "./pages/AdminDashboard";
 import NoPage from "./pages/NoPage/NoPage";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AuthContext } from "./AuthProvider";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import Wishlist from "./pages/Wishlist";
-
-
+import AdminRoute from "./AdminRoute";
+import UserRoute from "./UserRoute";
+import Cart from "./pages/Cart.jsx";
 
 function App() {
   const [active, setActive] = useState(0);
-  const { user } = useContext(AuthContext);
   return (
     <div className="font-Manrope">
       <ToastContainer
@@ -44,19 +43,30 @@ function App() {
           />
           <Route
             path="/profile"
-            element={<Profile active={active} setActive={setActive} />}
+            element={
+              <UserRoute>
+                <Profile active={active} setActive={setActive} />
+              </UserRoute>
+            }
           />
           <Route
-            path="/about"
-            element={<About active={active} setActive={setActive} />}
+            path="/cart"
+            element={
+              <UserRoute>
+                <Cart active={active} setActive={setActive} />
+              </UserRoute>
+            }
           />
+          <Route path="/about" element={<About active={active} setActive={setActive}/>} />
+          <Route path="/contact" element={<Contact active={active} setActive={setActive}/>} />
+
           <Route
-            path="/Contact"
-            element={<Contact active={active} setActive={setActive} />}
-          />
-          <Route
-            path="/Wishlist"
-            element={<Wishlist active={active} setActive={setActive} />}
+            path="/admin_dashboard"
+            element={
+              <AdminRoute>
+                <AdminDashboard active={active} setActive={setActive} />
+              </AdminRoute>
+            }
           />
           <Route path="*" element={<NoPage />} />
         </Routes>
